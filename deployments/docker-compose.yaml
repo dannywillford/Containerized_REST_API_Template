@@ -1,7 +1,10 @@
 version: '3.4'
 
 services:
-  device-registry:
-    build: .
-    volumes:
-      - .:/app
+  app:
+      container_name: rest-template
+      build:
+        context: ../
+        dockerfile: deployments/app/Dockerfile
+      ports:
+        - "5000:5000"
